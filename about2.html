@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>favorite touch | من نحن</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f8f4f9;
+      color: #333;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+    .top-bar {
+      background-color: #d63384;
+      color: #fff;
+      padding: 12px 0;
+      text-align: center;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      font-weight: bold;
+    }
+    .content {
+      padding: 120px 20px 40px;
+      text-align: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 48px;
+      animation: fadeInDown 2s ease;
+      margin-bottom: 30px;
+    }
+    nav {
+      margin-bottom: 40px;
+    }
+    nav a {
+      color: #d63384;
+      text-decoration: none;
+      margin: 0 18px;
+      font-size: 22px;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+    nav a:hover {
+      text-decoration: none;
+      color: #a61e5c;
+      border-bottom: 2px solid #a61e5c;
+    }
+    .about-section {
+      background: #fff;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      margin-top: 50px;
+      text-align: right;
+    }
+    .about-section h2 {
+      color: #d63384;
+      margin-bottom: 15px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .about-section p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 25px;
+    }
+    .about-section ul {
+      text-align: right;
+      margin-top: 20px;
+    }
+    .about-section ul li {
+      font-size: 18px;
+      color: #555;
+      margin: 12px 0;
+      list-style: none;
+    }
+    .about-section ul li:before {
+      content: '🔸';
+      margin-left: -20px;
+      margin-right: 10px;
+    }
+    .footer {
+      background-color: #d63384;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #fff0f6;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .top-bar {
+      background-color: #d63384;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    .content {
+      text-align: center;
+      padding: 100px 20px 50px;
+    }
+    .horse-image {
+      width: 200px;
+      animation: float 3s ease-in-out infinite;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 60px;
+      animation: fadeInDown 2s ease;
+    }
+    nav a {
+      color: #d63384;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 22px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #a61e5c;
+    }
+    p {
+      font-size: 20px;
+      margin: 30px 0;
+      animation: fadeInUp 2s ease;
+    }
+    .contact-button {
+      display: inline-block;
+      padding: 14px 35px;
+      background-color: #d63384;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(214, 51, 132, 0.5);
+      transition: background-color 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 3s ease;
+    }
+    .contact-button:hover {
+      background-color: #a61e5c;
+      box-shadow: 0 0 20px rgba(214, 51, 132, 0.7);
+    }
+    /* سلايدر */
+    .swiper {
+      width: 80%;
+      height: 250px;
+      margin: 40px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+    /* زر واتساب */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 26px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    /* حركات */
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes float {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-10px);}
+      100% { transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <marquee direction="right" scrollamount="5">✨ نحن في favorite touch نقدم لك أفضل حلول تنظيم الحفلات بأعلى جودة ✨</marquee>
+</div>
+<div class="content">
+    <img class="horse-image" src="crev-removebg-preview.png" alt="حصان جميل">
+    <h1>favorite touch</h1>
+<div class="content">
+  <h1>من نحن</h1>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="about2.html">من نحن2</a>
+   <a href="services.html">خدماتنا</a>
+     <a href="chandeliers.html">ثريات</a>
+    <a href="gallery.html">ودنق بلانر </a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+
+  <div class="about-section">
+    <h2>تعرف علينا</h2>
+    <p>نحن في شركة "favorite touch" نمتلك خبرة واسعة في تنظيم الحفلات والمناسبات المختلفة. بدأنا في عام 1997، وهدفنا تقديم حلول مبتكرة لعملائنا في جميع أنحاء المملكة بأعلى جودة وأفضل تجربة.</p>
+
+    <h2>رؤيتنا</h2>
+    <p>نسعى لأن نكون الخيار الأول للعملاء الذين يبحثون عن التفرد والجودة في تنظيم الحفلات. نحن نؤمن أن كل مناسبة لها طابع خاص، ونحن هنا لنحوّل هذه الرؤية إلى حقيقة مميزة.</p>
+
+    <h2>مهمتنا</h2>
+    <p>تقديم حلول مبتكرة ومميزة تلبي جميع الأذواق والاحتياجات، مع التركيز على التفاصيل واللمسات الفنية التي تجعل كل حدث فريدًا من نوعه.</p>
+
+    <h2>تاريخ الشركة</h2>
+    <ul>
+      <li>تأسست "favorite touch" في عام 1997، ومنذ ذلك الحين حققت نجاحًا باهرًا في مجال تنظيم الحفلات.</li>
+      <li>تمكنت الشركة من بناء سمعة قوية بفضل التزامنا بالجودة والابتكار في كل خدمة نقدمها.</li>
+      <li>نحن نعمل مع نخبة من المصممين والموهوبين لتقديم أفضل الحلول لكل مناسبة.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+ذ<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>favorite touch | الرئيسية</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #fff0f6;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .top-bar {
+      background-color: #d63384;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    .content {
+      text-align: center;
+      padding: 100px 20px 50px;
+    }
+    .horse-image {
+      width: 200px;
+      max-width: 90%;
+      animation: float 3s ease-in-out infinite;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 60px;
+      animation: fadeInDown 2s ease;
+    }
+    nav {
+      margin: 20px 0;
+    }
+    nav a {
+      color: #d63384;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 22px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #a61e5c;
+    }
+    .menu-button {
+      display: none;
+      font-size: 30px;
+      cursor: pointer;
+      color: #d63384;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 20;
+    }
+    .side-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #fff0f6;
+      box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+      padding: 60px 20px;
+      z-index: 30;
+      text-align: right;
+      transition: transform 0.3s;
+    }
+    .side-menu a {
+      display: block;
+      margin: 15px 0;
+      font-size: 20px;
+      color: #d63384;
+      text-decoration: none;
+    }
+    .side-menu a:hover {
+      color: #a61e5c;
+    }
+    p {
+      font-size: 20px;
+      margin: 30px 0;
+      animation: fadeInUp 2s ease;
+    }
+    .contact-button {
+      display: inline-block;
+      padding: 14px 35px;
+      background-color: #d63384;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(214, 51, 132, 0.5);
+      transition: background-color 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 3s ease;
+    }
+    .contact-button:hover {
+      background-color: #a61e5c;
+      box-shadow: 0 0 20px rgba(214, 51, 132, 0.7);
+    }
+
+    .swiper {
+      width: 300px;
+      height: 300px;
+      margin: 40px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 26px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes float {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-10px);}
+      100% { transform: translateY(0);}
+    }
+
+    /* موبايل */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 36px;
+      }
+      nav {
+        display: none;
+      }
+      .menu-button {
+        display: block;
+      }
+      p {
+        font-size: 18px;
+        margin: 20px 0;
+      }
+      .contact-button {
+        padding: 12px 25px;
+        font-size: 20px;
+      }
+      .swiper {
+        width: 250px;
+        height: 250px;
+      }
+      .top-bar {
+        font-size: 16px;
+        padding: 8px;
+      }
+      .whatsapp-float {
+        padding: 12px;
+        font-size: 22px;
+      }
+      audio {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <marquee direction="right" scrollamount="5">✨ أهلاً وسهلاً بكم في favorite touch — خبراء تنظيم الحفلات ✨</marquee>
+</div>
+
+<div class="menu-button" onclick="toggleMenu()">☰</div>
+
+<div class="side-menu" id="sideMenu">
+  <a href="index.html">الرئيسية</a>
+  <a href="about.html">من نحن</a>
+  <a href="about2.html">من نحن2</a>
+  <a href="services.html">خدماتنا</a>
+  <a href="chandeliers.html">ثريات</a>
+  <a href="gallery.html">المعرض</a>
+  <a href="contact.html">تواصل معنا</a>
+  <a href="#" onclick="toggleMenu()">❌ إغلاق</a>
+</div>
+
+<div class="content">
+  <img class="horse-image" src="crev-removebg-preview.png" alt="حصان جميل">
+  <h1>favorite touch</h1>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="about2.html">من نحن2</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="chandeliers.html">ثريات</a>
+    <a href="gallery.html">ودنق بلانر </a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+
+  <p>مع favorite touch، نجعل لحظاتكم الأجمل ✨</p>
+  <a class="contact-button" href="contact.html">📩 احجز حفلتك الآن</a>
+
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="شعار.png" alt="صورة 1"></div>
+      <div class="swiper-slide"><img src="77777777.jpg" alt="صورة 2"></div>
+      <div class="swiper-slide"><img src=";l,,kj (26).jpg" alt="صورة 3"></div>
+    </div>
+  </div>
+</div>
+
+<audio controls autoplay loop>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".swiper", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    slidesPerView: 1,
+  });
+
+  function toggleMenu() {
+    var menu = document.getElementById("sideMenu");
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+    } else {
+      menu.style.display = "block";
+    }
+  }
+</script>
+
+</body>
+</html>

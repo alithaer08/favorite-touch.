@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>favorite touch | من نحن</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #fff0f6;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .top-bar {
+      background-color: #d63384;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+    .content {
+      padding: 80px 20px 30px;
+      text-align: center;
+    }
+    .horse-image {
+      width: 150px;
+      margin: 20px auto;
+      animation: float 3s ease-in-out infinite;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 40px;
+      animation: fadeInDown 2s ease;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #555;
+      max-width: 800px;
+      margin: 20px auto;
+      animation: fadeInUp 2s ease;
+    }
+    nav a {
+      color: #d63384;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      text-decoration: underline;
+      color: #a61e5c;
+    }
+    .features {
+      max-width: 800px;
+      margin: 40px auto;
+      text-align: right;
+      direction: rtl;
+    }
+    .feature-item {
+      background: #fff;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .feature-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .feature-icon {
+      font-size: 24px;
+      color: #d63384;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 26px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 100;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    @keyframes fadeInDown {
+      from {opacity:0; transform: translateY(-50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity:0; transform: translateY(50px);}
+      to {opacity:1; transform: translateY(0);}
+    }
+    @keyframes float {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-10px);}
+      100% { transform: translateY(0);}
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <marquee direction="right" scrollamount="5">✨ من نحن — favorite touch ✨</marquee>
+</div>
+
+<div class="content">
+  <img class="horse-image" src="crev-removebg-preview.png" alt="حصان جميل">
+  <h1>من نحن</h1>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="about2.html">من نحن2</a>
+    <a href="services.html">خدماتنا</a>
+    <a href="chandeliers.html">ثريات</a>
+    <a href="gallery.html">ودنق بلانر </a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+
+  <p>
+    نحن في <strong>favorite touch</strong> نقدم أفضل خدمات تنظيم الحفلات والمناسبات بأسلوب عصري ولمسة إبداعية فريدة.
+    هدفنا أن نحول أفكاركم إلى لحظات لا تنسى.
+  </p>
+
+  <div class="features">
+    <div class="feature-item"><span class="feature-icon">✨</span> فريق متخصص في تنظيم الحفلات بكل أنواعها.</div>
+    <div class="feature-item"><span class="feature-icon">🎶</span> تجهيز موسيقى، إضاءة، وديكورات حسب ذوق العميل ،ثريات.</div>
+    <div class="feature-item"><span class="feature-icon">📸</span> تصوير فوتوغرافي وفيديو احترافي لتوثيق أجمل اللحظات.</div>
+    <div class="feature-item"><span class="feature-icon">🎉</span> خدمات متكاملة من البداية حتى نهاية الحفل.</div>
+    <div class="feature-item"><span class="feature-icon">💖</span> اهتمام بأدق التفاصيل لتحقيق أعلى جودة.</div>
+  </div>
+</div>
+
+
+
+<script>
+  // إظهار النقاط عند النزول
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.feature-item').forEach(item => {
+      const rect = item.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 50){
+        item.classList.add('visible');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
